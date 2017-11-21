@@ -17,8 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->string('path'); // upload de imagem
+            $table->string('image'); // upload de imagem
             $table->float('price', 10, 2);
+            $table->boolean('status')->default(true)->nullable;
             $table->timestamps();
         });
     }

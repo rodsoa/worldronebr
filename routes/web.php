@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::resource('news', 'NewsController');
 Route::resource('customers', 'CustomersController');
 Route::resource('events', 'CustomersController');
+Route::resource('event-categories', 'EventCategoriesController');
 Route::resource('products', 'ProductsController');
 
 Auth::routes();
