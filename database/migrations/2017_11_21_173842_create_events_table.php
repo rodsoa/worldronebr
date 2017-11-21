@@ -25,7 +25,7 @@ class CreateEventsTable extends Migration
 
             $table->foreign('event_category_id')
                 ->references('id')
-                ->on('event_category')
+                ->on('event_categories')
                 ->onDelete('cascade');
         });
     }
