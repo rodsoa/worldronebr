@@ -15,12 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('news', 'NewsController');
-Route::resource('customers', 'CustomersController');
-Route::resource('events', 'CustomersController');
-Route::resource('event-categories', 'EventCategoriesController');
-Route::resource('products', 'ProductsController');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('news', 'NewsController');
+    Route::resource('customers', 'CustomersController');
+    Route::resource('events', 'CustomersController');
+    Route::resource('event-categories', 'EventCategoriesController');
+    Route::resource('products', 'ProductsController');
+});
