@@ -17,8 +17,12 @@ Route::get('/', function () {
 
 Route::resource('news', 'NewsController');
 Route::resource('customers', 'CustomersController');
-Route::resource('events', 'CustomersController');
+Route::resource('events', 'EventsController');
 Route::resource('products', 'ProductsController');
+
+Route::get('teste', function () {
+    return 'testando';
+});
 
 Auth::routes();
 
