@@ -15,18 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-=======
-Route::resource('news', 'NewsController');
-Route::resource('customers', 'CustomersController');
-Route::resource('events', 'EventsController');
-Route::resource('products', 'ProductsController');
-
-Route::get('teste', function () {
-    return 'testando';
-});
-
->>>>>>> 32bcc226bb612339012fa7a6e10ef926bc5dea68
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
