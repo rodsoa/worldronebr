@@ -25,4 +25,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('events', 'CustomersController');
     Route::resource('event-categories', 'EventCategoriesController');
     Route::resource('products', 'ProductsController');
+
+    Route::prefix('rental-of-products')->group(function() {
+        Route::get('/', 'RentalProductsController@index')->name('rental.index');
+        Route::get('/{product}/to-rent', 'RentalProductsController@toRent')->name('rental.rent');
+    });
 });

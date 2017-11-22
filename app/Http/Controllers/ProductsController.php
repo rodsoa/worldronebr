@@ -19,7 +19,12 @@ class ProductsController extends Controller
     }
 
     public function store(StoreProductRequest $request) {
-        Product::create( $request->all() );
+        $product = Product::create( $request->all() );
+        if ( $request->hasFile('image') ) {
+            $file_name = (new \DateTime('now'))->format('YmdHis') . "-" . $product->id . "." . $request->image->extension();
+            $product->image = $request->image->storeAs('products', $file_name, 'upload');
+            $product->save();
+        }
         return redirect()->route('products.index')->with(
             [
                 'msg'    => 'Produto cadastrado com sucesso',

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12">
-                <form class="form-horizontal" action="{{ route('products.store') }}" method="POST">
+                <form class="form-horizontal" action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Nome</label>

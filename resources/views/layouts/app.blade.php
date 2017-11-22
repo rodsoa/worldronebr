@@ -38,7 +38,10 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/news/list">News</a></li>
+                        <li><a href="/events">Eventos</a></li>
+                        <li><a href="/rental-of-drones">Drone</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,6 +75,28 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    @if ( session('msg') !== null )
+                        @if ( session('status') === 'success')
+                            <div class="alert alert-success alert-dismissible">
+                                <button  class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-check"></i> Sucesso!</h4>
+                                {{ session('msg') }}
+                            </div>
+                        @else
+                            <div class="alert alert-danger alert-dismissible">
+                                <button  class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                                {{ session('msg') }}
+                            </div>
+                        @endif
+                    @endif
+                </div>
+            </div>
+        </div>
 
         @yield('content')
     </div>

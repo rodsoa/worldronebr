@@ -84,7 +84,7 @@ class NewsController extends Controller
         $new->save();
         return redirect()->route('news.index')->with(
             [
-                'msg'    => 'Cotícia editada com sucesso',
+                'msg'    => 'notícia editada com sucesso',
                 'status' => 'success'
             ]
         );
